@@ -66,12 +66,11 @@ def top_item(total_list,choose_income_quality):
 # df_choose_item = top_item(10,'sum_price')
 # df_choose_item = top_item(5,'Quantity')
 
-# df_basket = (df_choose_item
-#           .groupby(['Receipt No', 'Item No'])['Quantity']
-#           .sum().unstack().reset_index().fillna(0)
-#           .set_index('Receipt No'))
-# df_basket
-df_basket =df_choose_item.pivot_table(values = 'Quantity',index='Receipt No' , columns = 'Item No')
+df_basket = (df_choose_item
+          .groupby(['Receipt No', 'Item No'])['Quantity']
+          .sum().unstack().reset_index().fillna(0)
+          .set_index('Receipt No'))
+df_basket
 def encode_units(x):
     if x <= 0:
         return 0
