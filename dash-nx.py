@@ -18,7 +18,7 @@ import pandas as pd
 
 
 
-df_market_basket = pd.read_csv('masket_basket.csv')
+df_market_basket = pd.read_csv('masket_basketv2.csv')
 A = list(df_market_basket["LHS"].unique())
 B = list(df_market_basket["RHS"].unique())
 # print(list(set(A+B)))
